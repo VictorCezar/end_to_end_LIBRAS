@@ -1,0 +1,44 @@
+# 1. Pastas dos Sinalizadores (Vídeos)
+# Ignora todas as pastas que começam com "Sinalizador"
+Sinalizador*/
+
+# 2. Arquivos de Sistema e de Cache
+# Pasta de cache do MacOS
+__MACOSX/
+# Arquivos de sistema do MacOS
+.DS_Store
+# Pastas de cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 3. Instaladores e Arquivos Binários Grandes
+# Ignora o instalador do Miniconda
+Miniconda*.sh
+# Ignora qualquer arquivo de vídeo que possa estar na raiz
+*.mp4
+*.avi
+*.mov
+
+# 4. Arquivos de Backup de Editores
+# Ignora arquivos .save gerados por editores
+*.save
+
+# 5. Ambiente Virtual (se você criar um no futuro)
+# Por exemplo, se criar uma pasta chamada 'venv' ou '.venv'
+venv/
+.venv/
+env/
+.env
+
+# 6. Pasta de Plots (Opcional, mas recomendado)
+# É uma boa prática ignorar os plots, pois eles podem ser 
+# gerados novamente pelo código. Se quiser versioná-los, remova a linha abaixo.
+plots/
+training_plots/
+
+# Ignorar modelos salvos
+*.pth
+saved_models/
+saved_models_english/

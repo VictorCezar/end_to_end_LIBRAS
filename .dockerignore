@@ -1,0 +1,18 @@
+# Ignora o contexto de build do Git
+.git/
+.gitignore
+
+# Ignora o contexto do Docker
+Dockerfile
+.dockerignore
+
+# Ignora pastas de vídeo e arquivos grandes
+Sinalizador*/
+Miniconda*.sh
+*.mp4
+
+# Ignora cache e arquivos de sistema
+__MACOSX/
+.DS_Store
+__pycache__/
+*.pyc
