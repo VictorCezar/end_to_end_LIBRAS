@@ -1,19 +1,19 @@
-# Classificador de Sinais de LIBRAS com PyTorch e Transformers
+# LIBRAS Sign Classifier with PyTorch and Transformers
 
-## 📖 Descrição
+## 📖 Description
 
-Este projeto é uma implementação de um modelo de Deep Learning para o reconhecimento e classificação de sinais isolados da Língua Brasileira de Sinais (LIBRAS) a partir de vídeos. Utilizando uma arquitetura *end-to-end*, o modelo analisa diretamente os pixels do vídeo para realizar a classificação, com foco em alta acurácia e eficiência computacional.
+This project implements a Deep Learning model for recognizing and classifying isolated signs from Brazilian Sign Language (LIBRAS) using video inputs. Using an *end-to-end* architecture, the model directly analyzes raw video pixels for classification, with a focus on high accuracy and computational efficiency.
 
-O trabalho foi desenvolvido como parte de um artigo científico, comparando diferentes arquiteturas de redes neurais, como 3D-CNNs (I3D) e Video Transformers.
+The work was developed as part of a scientific paper, comparing different neural network architectures such as 3D-CNNs (I3D) and Video Transformers.
 
 ### ✨ Features
 
-* **Alta Acurácia:** Atinge mais de 90% de acurácia no conjunto de teste.
-* **Pipeline End-to-End:** Processa diretamente vídeos brutos (RGB).
-* **Validação Robusta:** O conjunto de teste é composto por sinalizadores não vistos durante o treinamento, garantindo a capacidade de generalização do modelo.
-* **Reprodutibilidade:** O projeto é totalmente containerizado com Docker, garantindo que qualquer pessoa possa rodar o treinamento com dois comandos.
+* **High Accuracy:** Achieves over 90% accuracy on the test set.
+* **End-to-End Pipeline:** Directly processes raw RGB videos.
+* **Robust Validation:** The test set is composed of signers unseen during training, ensuring the model's generalization capabilities.
+* **Reproducibility:** The project is fully containerized with Docker, ensuring anyone can run the training with just two commands.
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tech Stack
 
 * Python 3.10+
 * PyTorch
@@ -22,69 +22,68 @@ O trabalho foi desenvolvido como parte de um artigo científico, comparando dife
 * Docker
 * NVIDIA CUDA
 
-## ⚙️ Estrutura do Projeto
+## ⚙️ Project Structure
 
-```
 .
-├── dataset_splits/     # Arquivos CSV com a divisão de treino, validação e teste
-├── training_plots/       # Pasta onde os gráficos de treinamento são salvos
-├── build_pytorch_model.py # Script principal para treinamento e avaliação do modelo
-├── extract_metadata.py    # Script para extrair metadados dos vídeos
-├── split_dataset.py       # Script para realizar a divisão do dataset
-├── minds_libras_metadata.csv # Metadados do dataset
-├── Dockerfile             # Receita para construir a imagem Docker do projeto
-├── environment.yml        # Lista de dependências do ambiente Conda
-└── README.md              # Esta documentação
-```
+├── dataset_splits/     # CSV files with train, validation, and test splits
+├── training_plots/       # Folder where training plots are saved
+├── build_pytorch_model.py # Main script for model training and evaluation
+├── extract_metadata.py    # Script to extract metadata from videos
+├── split_dataset.py       # Script to perform the dataset split
+├── minds_libras_metadata.csv # Dataset metadata
+├── Dockerfile             # Recipe to build the project's Docker image
+├── environment.yml        # List of Conda environment dependencies
+└── README.md              # This documentation
 
-## 🚀 Instalação e Uso
 
-Você pode rodar este projeto de duas maneiras: a forma recomendada (com Docker) ou a forma manual.
+## 🚀 Installation and Usage
 
-### Método 1: Usando Docker (Recomendado)
+You can run this project in two ways: the recommended method (with Docker) or the manual method.
 
-**Pré-requisitos:** [Docker](https://www.docker.com/get-started) e [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) (para suporte a GPU).
+### Method 1: Using Docker (Recommended)
 
-1.  **Clone o repositório:**
+**Prerequisites:** [Docker](https://www.docker.com/get-started) and [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) (for GPU support).
+
+1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-    cd seu-repositorio
+    git clone [https://github.com/VictorCezar/end_to_end_LIBRAS.git](https://github.com/VictorCezar/end_to_end_LIBRAS.git)
+    cd end_to_end_LIBRAS
     ```
 
-2.  **Construa a imagem Docker:**
+2.  **Build the Docker image:**
     ```bash
     docker build -t libras-classifier .
     ```
 
-3.  **Execute o treinamento:**
+3.  **Run the training:**
     ```bash
     docker run --gpus all -v "$(pwd)/dataset_splits:/app/dataset_splits" -v "$(pwd)/training_plots:/app/training_plots" libras-classifier
     ```
-    Os gráficos e resultados do treinamento aparecerão na pasta `training_plots`.
+    The plots and training results will appear in the `training_plots` folder.
 
-### Método 2: Manualmente com Conda
+### Method 2: Manually with Conda
 
-1.  **Clone o repositório:**
+1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-    cd seu-repositorio
+    git clone [https://github.com/VictorCezar/end_to_end_LIBRAS.git](https://github.com/VictorCezar/end_to_end_LIBRAS.git)
+    cd end_to_end_LIBRAS
     ```
 
-2.  **Crie o ambiente Conda a partir do arquivo de ambiente:**
+2.  **Create the Conda environment from the environment file:**
     ```bash
     conda env create -f environment.yml
     ```
 
-3.  **Ative o ambiente:**
+3.  **Activate the environment:**
     ```bash
-    conda activate libras_env  # Substitua 'libras_env' pelo nome do seu ambiente
+    conda activate libras_env  # Replace 'libras_env' with your environment's name
     ```
 
-4.  **Execute o script de treinamento:**
+4.  **Run the training script:**
     ```bash
     python build_pytorch_model.py
     ```
 
-## 🤝 Contribuições
+## 🤝 Contributing
 
-Contribuições, issues e feature requests são bem-vindos! Sinta-se à vontade para abrir uma issue para discutir melhorias.
+Contributions, issues, and feature requests are welcome! Feel free to open an issue to discuss improvements.
