@@ -1,4 +1,4 @@
-# LIBRAS Sign Classifier with PyTorch and Transformers
+# LIBRAS Sign Classifier with PyTorch
 
 ## 📖 Description
 
