@@ -25,15 +25,15 @@ The work was developed as part of a scientific paper, comparing different neural
 ## ⚙️ Project Structure
 
 .
-├── dataset_splits/     # CSV files with train, validation, and test splits
-├── training_plots/       # Folder where training plots are saved
-├── build_pytorch_model.py # Main script for model training and evaluation
-├── extract_metadata.py    # Script to extract metadata from videos
-├── split_dataset.py       # Script to perform the dataset split
-├── minds_libras_metadata.csv # Dataset metadata
-├── Dockerfile             # Recipe to build the project's Docker image
-├── environment.yml        # List of Conda environment dependencies
-└── README.md              # This documentation
+* ├── dataset_splits/     # CSV files with train, validation, and test splits
+* ├── training_plots/       # Folder where training plots are saved
+* ├── build_pytorch_model.py # Main script for model training and evaluation
+* ├── extract_metadata.py    # Script to extract metadata from videos
+* ├── split_dataset.py       # Script to perform the dataset split
+* ├── minds_libras_metadata.csv # Dataset metadata
+* ├── Dockerfile             # Recipe to build the project's Docker image
+* ├── environment.yml        # List of Conda environment dependencies
+* └── README.md              # This documentation
 
 
 ## 🚀 Installation and Usage
